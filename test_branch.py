@@ -12,7 +12,7 @@ i = 0
 target_number = input("How many in a row")
 target_number = int(target_number)
 order_array = []
-for i in range(target_number)
+for i in range(target_number):
     order_temp = input(f"What colour is drawn #{i+1}?")
     order_temp = int(order_temp)
     order_array.append(order_temp)
@@ -21,13 +21,15 @@ replacement = int(replacement)
 if replacement == 0:
     for i in range(target_number):
         answer = answer / total
-        answer = answer * colour_list[order_array[i+1]]
-        colour_change = colour_list[order_array[i+1]] - 1
-        colour_list[order_array[i+1]] = colour_change
+        temp_val = colour_list[order_array[i] - 1]
+        answer = answer * temp_val
+        colour_change = colour_list[order_array[i] - 1] - 1
+        colour_list[order_array[i] - 1] = colour_change
         total = total - 1
         i = i +1
-else
-    for i in range(target_number)
+else:
+    for i in range(target_number):
         answer = answer / total
-        answer = answer * colour_list[order_array[i + 1]]
+        answer = answer * colour_list[order_array[i] - 1]
+answer = answer * 100
 print("The answer is: " , answer, "%")
